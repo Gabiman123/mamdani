@@ -86,6 +86,39 @@ function calcularGradoPertenencia(a,b,m,func,x)
 				return 1;
 			}
 		break;
+	}	
+}
+
+function obtenerGradoSuciedad(suc = 60)
+{
+	let suciedadPoca = datos.conjuntos.suciedad.poca;
+	let suciedadMedia = datos.conjuntos.suciedad.media;
+	let suciedadMucha = datos.conjuntos.suciedad.mucha;
+	let gradoSuciedadPoca = calcularGradoPertenencia(suciedadPoca.min,suciedadPoca.max,suciedadPoca.nucleo,suciedadPoca.func,suc);
+	let gradoSuciedadMedia = calcularGradoPertenencia(suciedadMedia.min,suciedadMedia.max,suciedadMedia.nucleo,suciedadMedia.func,suc);
+	let gradoSuciedadMucha = calcularGradoPertenencia(suciedadMucha.min,suciedadMucha.max,suciedadMucha.nucleo,suciedadMucha.func,suc);
+	console.log(gradoSuciedadPoca)
+	console.log(gradoSuciedadMedia)
+	console.log(gradoSuciedadMucha)
+}
+
+function obtenerGradoGrasa(suc = 70)
+{
+	let grasaPoca = datos.conjuntos.grasa.poca;
+	let grasaMedia = datos.conjuntos.grasa.media;
+	let grasaMucha = datos.conjuntos.grasa.mucha;
+	let gradoGrasaPoca = calcularGradoPertenencia(grasaPoca.min,grasaPoca.max,grasaPoca.nucleo,grasaPoca.func,suc);
+	let gradoGrasaMedia = calcularGradoPertenencia(grasaMedia.min,grasaMedia.max,grasaMedia.nucleo,grasaMedia.func,suc);
+	let gradoGrasaMucha = calcularGradoPertenencia(grasaMucha.min,grasaMucha.max,grasaMucha.nucleo,grasaMucha.func,suc);
+	console.log(gradoGrasaPoca)
+	console.log(gradoGrasaMedia)
+	console.log(gradoGrasaMucha)
+}
+
+function recorrerReglas()
+{
+	for(let regla in datos.reglas)
+	{
+		console.log(datos.reglas[regla].suciedad);
 	}
-	
 }
